@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>Observações da Ordem de Serviço</h1>
+    <mat-card class="mat-elevation-z8">
+        <p id="abertura">Data de abertura: {{ os.dataAbertura }}</p>
+
+        <div>
+
+            <p id="nome">Nome do Tecnico: {{ os.tecnico }}</p>
+            <p id="nome">Nome do Cliente: {{ os.cliente }}</p>
+        </div>
+
+
+        <div>
+            <div id="obs">Observacao da Ordem de Servico:</div>
+            <p>{{ os.observacao }}</p>
+        </div>
+        <div>
+            <div id="pr">Prioridade:</div>
+            <p> {{ os.prioridade }} </p>
+        </div>
+        <div>
+            <div id="pr">Status:</div>
+            <p> {{ os.status }} </p>
+        </div>
+        <div>
+            <div id="pr">Nome do Produto:</div>
+            <p> {{ os.produto }} </p>
+        </div>
+
+        <div>
+            <div id="pr">Descricao do Produto:</div>
+            <p> {{ os.descricaoProduto }} </p>
+        </div>
+
+
+    </mat-card>
+    <button title="Clique para voltar" (click)="return()" class="mat-elevation-z8" mat-stroked-button color="warn">VOLTAR</button>
+</div>

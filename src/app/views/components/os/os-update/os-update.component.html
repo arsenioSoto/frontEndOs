@@ -1,0 +1,69 @@
+<div class="container">
+    <h1 id="titulo">Actualizando Ordem de Serviço</h1>
+    <div class="labels">
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um Tecnico</mat-label>
+            <mat-select [(value)]="os.tecnico">
+                <mat-option *ngFor="let tec of tecnicos" value="{{tec.id}}">{{tec.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um Cliente</mat-label>
+            <mat-select [(value)]="os.cliente">
+                <mat-option *ngFor="let cli of clientes" value="{{cli.id}}">{{cli.nome}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione um Status</mat-label>
+            <mat-select [(value)]="os.status">
+                <mat-option value="0">ABERTO</mat-option>
+                <mat-option value="1">EM ANDAMENTO</mat-option>
+                <mat-option value="2">ENCERRADO</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Selecione uma Prioridade</mat-label>
+            <mat-select [(value)]="os.prioridade">
+                <mat-option value="0">BAIXA</mat-option>
+                <mat-option value="1">MEDIA</mat-option>
+                <mat-option value="2">ALTA</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+
+    <form class="form form mat-elevation-z8">
+
+        <mat-form-field class="text">
+            <mat-label>Nome do Produto</mat-label>
+            <input [(ngModel)]="os.produto" name="produto" maxlength="50" matInput placeholder="Leptop">
+        </mat-form-field>
+
+
+        <mat-form-field class="textValor">
+            <mat-label>Valor do Produto</mat-label>
+            <input [(ngModel)]="os.valor" name="valor" maxlength="20" matInput placeholder="0000.000,00">
+        </mat-form-field>
+
+        <div>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Adicione a descricao do Produto</mat-label>
+                <textarea [(ngModel)]="os.descricaoProduto" name="descricaoProduto" matInput maxlength="255"></textarea>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Adicione as Observacoes da Ordem de Servico</mat-label>
+                <textarea [(ngModel)]="os.observacao" name="observacao" matInput maxlength="255"></textarea>
+            </mat-form-field>
+        </div>
+
+    </form>
+
+    <button (click)="update()" class="mat-elevation-z8" mat-stroked-button color="accent">ATUALIZAR</button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="warn">CANCELAR</button>
+</div>
